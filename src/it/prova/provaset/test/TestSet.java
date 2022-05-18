@@ -1,5 +1,7 @@
 package it.prova.provaset.test;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -10,21 +12,29 @@ public class TestSet {
 		Set<String> insiemeColoriHS = new HashSet<String>();
 		System.out.println("HashSet:");
 		inizializzaEStampaColori(insiemeColoriHS);
+		inizializzaEStampaColori(insiemeColoriHS);
 
 		System.out.println("Aggiungo un colore già esistente: HashSet non ammette dupplicati");
 		aggiungiColore("Rosso", insiemeColoriHS);
 		stampaColori(insiemeColoriHS);
-		
+
 		// ------------------------------------------------
-		
+
 		System.out.println("TreeSet:");
 		Set<String> insiemeColoriTS = new TreeSet<String>();
 		System.out.println("TreeSet:");
 		inizializzaEStampaColori(insiemeColoriTS);
-		
+
 		System.out.println("Aggiungo un colore già esistente: TreeSet non ammette dupplicati");
 		aggiungiColore("Blu", insiemeColoriTS);
 		stampaColori(insiemeColoriTS);
+
+		// --------------------------------------------------
+
+		Date dataSql = Date.valueOf("1990-01-01");
+		System.out.println(dataSql);
+		
+		
 	}
 
 	public static void inizializzaEStampaColori(Set<String> set) {
@@ -38,7 +48,7 @@ public class TestSet {
 	public static void aggiungiColore(String colore, Set<String> set) {
 		set.add(colore);
 	}
-	
+
 	public static void stampaColori(Set<String> set) {
 		for (String colore : set) {
 			System.out.println(colore);
